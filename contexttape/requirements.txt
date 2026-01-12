@@ -1,0 +1,8 @@
+requests>=2.31.0
+beautifulsoup4>=4.12.3
+numpy>=1.26.0
+openai>=1.40.0
+psutil>=5.9.0
+pyRAPL>=0.2.3  # optional; only works on supported Intel platforms
+tiktoken
+pypdf

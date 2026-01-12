@@ -1,0 +1,24 @@
+{
+  "topics": [
+    {
+      "id": "photosynthesis",
+      "title": "Photosynthesis",
+      "summary": "Light-dependent reactions produce ATP and NADPH; Calvin cycle fixes CO2 into sugars; overall 6CO2+6H2O+light→C6H12O6+6O2."
+    },
+    {
+      "id": "http_vs_https",
+      "title": "HTTP vs HTTPS",
+      "summary": "HTTPS adds TLS for encryption and authentication; methods, status codes, and semantics match HTTP."
+    },
+    {
+      "id": "renaissance_art",
+      "title": "Renaissance Art",
+      "summary": "Linear perspective, humanism, Medici patronage, and masters like Leonardo, Michelangelo, Raphael."
+    },
+    {
+      "id": "kamala_harris",
+      "title": "Kamala Harris",
+      "summary": "Served as U.S. Vice President (2021–2025); previous roles include U.S. Senator and California Attorney General."
+    }
+  ]
+}

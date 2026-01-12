@@ -1,0 +1,19 @@
+\
+site_name: ContextTape
+site_description: Lightweight local RAG: build on-disk text/vector stores, hybrid search, chat.
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+repo_url: https://github.com/YOUR_ORG/YOUR_REPO
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - CLI Reference: cli.md
+  - Python API: python_api.md
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true\n

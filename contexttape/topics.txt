@@ -1,0 +1,6 @@
+# topics.txt - Wikipedia pages to ingest
+Python_(programming_language)
+Machine_learning
+Artificial_intelligence
+Neural_network
+Deep_learning
