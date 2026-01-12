@@ -312,7 +312,10 @@ ct search "photosynthesis basics" \
 
 ### 2️⃣ `ct chat`
 Hybrid retrieval + prompt assembly.
-
+```bash
+ct chat
+```
+OR
 ```bash
 ct chat \
   --wiki-dir wiki_store --chat-dir chat_ts \
