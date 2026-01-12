@@ -1,6 +1,6 @@
 # src/contexttape/relevance.py
 from __future__ import annotations
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 from .utils import norm_tokens
 
 def lexical_overlap_score(query: str, text: str) -> float:
@@ -38,7 +38,7 @@ def select_relevant_blocks(
     min_lex: float = 0.12,
     min_hybrid: float = 0.28,
     alpha: float = 0.7,
-    max_blocks: int | None = None,
+    max_blocks: Optional[int] = None,
     max_preview_chars: int = 1200,
 ) -> Tuple[bool, List[str]]:
     """

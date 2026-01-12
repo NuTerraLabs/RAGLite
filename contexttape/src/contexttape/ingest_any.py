@@ -37,7 +37,7 @@ def _summary_for_audio(path: str, duration_sec: Optional[float] = None) -> str:
     dur = f"{duration_sec:.1f}s" if duration_sec else "unknown duration"
     return f"Audio file: {base} ({dur})"
 
-def _summary_for_pdf(path: str, pages: int | None) -> str:
+def _summary_for_pdf(path: str, pages: Optional[int]) -> str:
     base = os.path.basename(path)
     p = f"{pages} pages" if pages is not None else "unknown pages"
     return f"PDF document: {base} ({p})"
@@ -49,7 +49,7 @@ def _summary_for_video(path: str) -> str:
 def _build_text_payload(manifest: dict) -> str:
     return json.dumps(manifest, ensure_ascii=False, indent=2)
 
-def ingest_text(store: ISStore, path: str, quantize_vec: bool = False, max_bytes: int | None = None) -> Tuple[int,int]:
+def ingest_text(store: ISStore, path: str, quantize_vec: bool = False, max_bytes: Optional[int] = None) -> Tuple[int,int]:
     client = get_client()
     text = _read_text_utf8(path, max_bytes=max_bytes)
     summary = _summarize_text_for_payload(text)
@@ -157,7 +157,7 @@ def ingest_video(store: ISStore, path: str, also_store_blob: bool = True, quanti
     tid, vid = store.append_text_with_embedding(payload, emb, quantize=quantize_vec)
     return tid, vid
 
-def ingest_any(store: ISStore, path: str, quantize_vec: bool = False, max_bytes: int | None = None) -> Tuple[int,int]:
+def ingest_any(store: ISStore, path: str, quantize_vec: bool = False, max_bytes: Optional[int] = None) -> Tuple[int,int]:
     ext = os.path.splitext(path)[1].lower()
     if ext in TEXT_EXTS:
         return ingest_text(store, path, quantize_vec=quantize_vec, max_bytes=max_bytes)

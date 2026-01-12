@@ -156,7 +156,7 @@ def _is_assistant_line(line: str) -> bool:
     return line.lower().startswith("assistant:")
 
 
-def _first_payload_line(block: str) -> str | None:
+def _first_payload_line(block: str) -> Optional[str]:
     for ln in block.splitlines():
         if ":" in ln and (ln.lower().startswith("user:") or ln.lower().startswith("assistant:")):
             return ln.strip()
@@ -232,7 +232,7 @@ def _search_store_only(
     qvec,
     top_k: int = 5,
     stride: int = 1,
-    coarse_limit: int | None = 16,
+    coarse_limit: Optional[int] = 16,
 ):
     return store.search_by_vector(
         query_vec=qvec, top_k=top_k, stride=stride, coarse_limit=coarse_limit

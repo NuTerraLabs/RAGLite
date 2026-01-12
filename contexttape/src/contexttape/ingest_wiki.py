@@ -1,7 +1,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
-from typing import Iterable, List
+from typing import Iterable, List, Optional
 
 def fetch_wiki_page(topic: str, verbose: bool = False) -> str:
     url = f"https://en.wikipedia.org/wiki/{topic}"
@@ -24,7 +24,7 @@ def fetch_wiki_page(topic: str, verbose: bool = False) -> str:
             print(f"[FETCH] failed {e}")
         return topic
 
-def load_topics(topics_file: str, limit: int | None = None) -> List[str]:
+def load_topics(topics_file: str, limit: Optional[int] = None) -> List[str]:
     with open(topics_file, "r", encoding="utf-8") as f:
         topics = [ln.strip() for ln in f if ln.strip() and not ln.startswith("#")]
     return topics[:limit] if limit else topics

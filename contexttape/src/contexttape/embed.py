@@ -167,7 +167,7 @@ def embed_image(image_bytes: bytes) -> np.ndarray:
     rng = np.random.default_rng(seed)
     return rng.normal(0, 1, _EMBED_DIM).astype(np.float32)
 
-def embed_audio(audio_bytes: bytes, sample_rate_hint: int | None = None) -> np.ndarray:
+def embed_audio(audio_bytes: bytes, sample_rate_hint: Optional[int] = None) -> np.ndarray:
     """
     Replace with a real audio-embedding model if you have one.
     Deterministic placeholder: hash -> RNG -> 1536-d vector.

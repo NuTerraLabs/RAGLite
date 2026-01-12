@@ -405,7 +405,7 @@ class ISStore:
 
     def append_bytes(
         self,
-        payload: bytes | str,
+        payload: Union[bytes, str],
         data_type: int = DT_BLOB,
         prev_id: int = -1,
         dim: int = 0,
