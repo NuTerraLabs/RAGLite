@@ -295,8 +295,8 @@ class ISStore:
         nb = np.linalg.norm(b)
         if na == 0 or nb == 0:
             return 0.0
-        # Clamp to [0, 1] to handle floating-point precision issues
-        return float(np.clip(np.dot(a, b) / (na * nb), 0.0, 1.0))
+        # Clamp to [-1, 1] to handle floating-point precision issues
+        return float(np.clip(np.dot(a, b) / (na * nb), -1.0, 1.0))
 
     def _candidate_ids_from_coarse(self, q: np.ndarray, limit: Optional[int]) -> Optional[List[int]]:
         """

@@ -60,7 +60,7 @@ class TestEndToEndWorkflows:
             for score, tid, vid in results:
                 text = store.read_text(tid)
                 assert text in documents
-                assert 0 <= score <= 1
+                assert -1 <= score <= 1
 
     def test_multi_store_workflow(self):
         """Test multi-store late fusion workflow."""
